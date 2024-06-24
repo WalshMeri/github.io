@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Сайтик</title>
+</head>
+<body>
+    <header>
+        <h1>Почему стоит подарить Димочке MacBook</h1>
+        <p>Подарок от  Сонечки</p>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <div class="section-content">
+                <div class="section-text">
+                    <h2>Повышение продуктивности</h2>
+                    <p>MacBook Air M3 поможет твоему Димочке работать эффективнее и быстрее. Благодаря мощному процессору M3 и оптимизированной операционной системе, Димочка сможет легко справляться с любыми задачами.</p>
+                </div>
+                <div class="section-image">
+                    <div class="image-gallery">
+                        <button class="prev-btn">&#10094;</button>
+                        <div class="images-wrapper">
+                            <img src="mac1.jpg" alt="MacBook Air M3 для повышения продуктивности">
+                            <img src="mac1_alt1.jpg" alt="MacBook Air M3 другой ракурс">
+                            <img src="mac1_alt2.jpg" alt="MacBook Air M3 еще один ракурс">
+                        </div>
+                        <button class="next-btn">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-content">
+                <div class="section-image">
+                    <div class="image-gallery">
+                        <button class="prev-btn">&#10094;</button>
+                        <div class="images-wrapper">
+                            <img src="mac2.jpg" alt="Творческий потенциал с MacBook Air M3">
+                            <img src="mac2_alt1.jpg" alt="Творческий потенциал другой ракурс">
+                            <img src="mac2_alt2.jpg" alt="Творческий потенциал еще один ракурс">
+                        </div>
+                        <button class="next-btn">&#10095;</button>
+                    </div>
+                </div>
+                <div class="section-text">
+                    <h2>Раскрытие творческого потенциала</h2>
+                    <p>С великолепным Retina дисплеем и мощными графическими возможностями, MacBook поможет Димочке раскрыть свой творческий потенциал. Будь то обработка фотографий, монтаж видео или создание дизайна — все будет проходить гладко и вдохновляюще.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-content">
+                <div class="section-text">
+                    <h2>Мобильность и автономность</h2>
+                    <p>Легкий и тонкий MacBook Air идеально подходит для мобильного образа жизни Димочки. С впечатляющим временем автономной работы до 18 часов, он сможет работать и творить где угодно, не беспокоясь о поиске розетки.</p>
+                </div>
+                <div class="section-image">
+                    <div class="image-gallery">
+                        <button class="prev-btn">&#10094;</button>
+                        <div class="images-wrapper">
+                            <img src="mac4.jpg" alt="Мобильность MacBook Air M3">
+                            <img src="mac4_alt1.jpg" alt="Мобильность другой ракурс">
+                            <img src="mac4_alt2.jpg" alt="Мобильность еще один ракурс">
+                        </div>
+                        <button class="next-btn">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-content">
+                <div class="section-image">
+                    <div class="image-gallery">
+                        <button class="prev-btn">&#10094;</button>
+                        <div class="images-wrapper">
+                            <img src="mac3.jpg" alt="Долгосрочная инвестиция в MacBook Air M3">
+                            <img src="mac3_alt1.jpg" alt="Долгосрочная инвестиция другой ракурс">
+                            <img src="mac3_alt2.jpg" alt="Долгосрочная инвестиция еще один ракурс">
+                        </div>
+                        <button class="next-btn">&#10095;</button>
+                    </div>
+                </div>
+                <div class="section-text">
+                    <h2>Долгосрочная инвестиция</h2>
+                    <p>MacBook Air M3 — это не просто подарок, а инвестиция в будущее Димочки. Благодаря высокому качеству сборки, передовым технологиям и регулярным обновлениям от Apple, этот ноутбук прослужит долгие годы, помогая Димочке в учебе, работе и творчестве.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Слайдер для галереи изображений с кнопками
+        document.querySelectorAll('.image-gallery').forEach(gallery => {
+            const imagesWrapper = gallery.querySelector('.images-wrapper');
+            const images = imagesWrapper.querySelectorAll('img');
+            let currentIndex = 0;
+
+            const updateGallery = () => {
+                imagesWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+            };
+
+            gallery.querySelector('.prev-btn').addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateGallery();
+                }
+            });
+
+            gallery.querySelector('.next-btn').addEventListener('click', () => {
+                if (currentIndex < images.length - 1) {
+                    currentIndex++;
+                    updateGallery();
+                }
+            });
+        });
+
+        // Анимация появления секций
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+    <footer>
+        <h1>Почему стоит подарить Димочке MacBook</h1>
+        <p>Подарок от  Сонечки</p>
+    </footer>
+</body>
+</html>
